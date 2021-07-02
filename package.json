@@ -1,0 +1,20 @@
+{
+  "name": "boostwild.in",
+  "version": "1.0.0",
+  "description": "Official Website of BoostWild.",
+  "main": "index.js",
+  "repository": "git@github.com:BoostWild/boostwild.github.io",
+  "author": "antony-jr <antonyjr@protonmail.com>",
+  "license": "GPL v3",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^11.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
