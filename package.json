@@ -5,24 +5,30 @@
   "main": "index.js",
   "repository": "git@github.com:BoostWild/boostwild.github.io",
   "author": "antony-jr <antonyjr@protonmail.com>",
-  "license": "GPL v3",
+  "license": "AGPL-3.0-or-later",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettify": "prettier --write components pages"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^1.0.13",
     "@chakra-ui/react": "^1.6.4",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@fontsource/inter": "^4.4.5",
+    "@fontsource/roboto": "^4.4.5",
     "framer-motion": "^4",
     "next": "^11.0.1",
     "react": "^17.0.2",
+    "react-animated-social-icons": "^1.1.0",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@types/react": "^17.0.13",
-    "typescript": "^4.3.5"
+    "typescript": "^4.3.5",
+    "prettier": "^2.3.2"
   }
 }
