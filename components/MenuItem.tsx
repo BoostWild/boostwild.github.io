@@ -1,6 +1,6 @@
 import { Button, Link } from "@chakra-ui/react";
 
-function dummyLinkHandler() {}
+function dummyLinkHandler(x) {}
 
 const MenuItem = ({
   children,
