@@ -6,8 +6,14 @@ import {
   Box,
   Stack,
   Divider,
+  Drawer,
+  DrawerBody,
+  DrawerHeader,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerOverlay,
 } from "@chakra-ui/react";
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme, useDisclosure } from "@chakra-ui/react";
 import "@fontsource/inter/800.css";
 import "@fontsource/roboto/400.css";
 
@@ -24,6 +30,7 @@ const theme = extendTheme({
 
 function App({ Component, pageProps }) {
   const [isOpen, setIsOpen] = React.useState(false);
+  const btnRef = React.useRef();
   const toggle = () => setIsOpen(!isOpen);
   const handleLink = (link) => {
     console.log({ link });
@@ -44,18 +51,18 @@ function App({ Component, pageProps }) {
           <Logo />
         </Fade>
         <Fade in={true}>
-          <MenuToggle toggle={toggle} isOpen={isOpen} />
+          <MenuToggle toggle={toggle} isOpen={isOpen} ref={btnRef} />
         </Fade>
         <Box
-          display={{ base: isOpen ? "block" : "none", md: "block" }}
+          display={{ base: "none", md: "block" }}
           flexBasis={{ base: "100%", md: "auto" }}
         >
           <Fade in={true}>
             <Stack
               spacing={8}
               align="center"
-              justify={["center", "center", "flex-end", "flex-end"]}
-              direction={["column", "column", "row", "row"]}
+              justify="flex-end"
+              direction="row"
               pt={[4, 4, 0, 0]}
             >
               <MenuItem to="/" linkSignal={handleLink}>
@@ -77,6 +84,22 @@ function App({ Component, pageProps }) {
           </Fade>
         </Box>
       </Flex>
+      <Drawer
+        closeOnOverlayClick
+        isOpen={isOpen}
+        onClose={toggle}
+        placement="right"
+        finalFocusRef={btnRef}
+      >
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader>Navigation</DrawerHeader>
+
+          <DrawerBody></DrawerBody>
+        </DrawerContent>
+      </Drawer>
+
       <Divider />
       <Component {...pageProps} />
     </ChakraProvider>
