@@ -11,9 +11,9 @@ import { extendTheme } from "@chakra-ui/react";
 import "@fontsource/inter/800.css";
 import "@fontsource/roboto/400.css";
 
-import Logo from "../components/Logo.tsx";
-import MenuToggle from "../components/MenuToggle.tsx";
-import MenuItem from "../components/MenuItem.tsx";
+import Logo from "../components/Logo";
+import MenuToggle from "../components/MenuToggle";
+import MenuItem from "../components/MenuItem";
 
 const theme = extendTheme({
   fonts: {

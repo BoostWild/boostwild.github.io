@@ -4,7 +4,7 @@ function dummyLinkHandler(x) {}
 
 const MenuItem = ({
   children,
-  isLast,
+  isLast = false,
   to = "/",
   linkSignal = dummyLinkHandler,
   ...rest

@@ -20,7 +20,6 @@ function Index() {
         <Box as="section" pt="6rem" pb={{ base: "0", md: "5rem" }}>
           <Container maxW="container.lg">
             <Stack
-              wrap
               spacing={8}
               align="center"
               justify="space-between"
