@@ -1,2 +1,12 @@
-# boostwild.github.io
-Official website for BoostWild. Open Sourced under GPL v3.
+# BoostWild Official Website (Work in Progress)
+
+Official website for BoostWild. Open Sourced under AGPL v3.
+
+
+# License
+
+
+The AGPL v3.
+
+Copyright (C) 2021-present, BoostWild.
+
