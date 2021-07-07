@@ -13,6 +13,18 @@ import {
   Button,
 } from "@chakra-ui/react";
 
+import {
+  Textarea,
+  Input,
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
+} from "@chakra-ui/react";
+
+import Fade from "react-reveal/Fade";
+import Bounce from "react-reveal/Bounce";
+
 import Head from "next/head";
 
 import PricingCard from "../components/PricingCard";
@@ -85,7 +97,7 @@ function Index() {
           content="Modern Web Development and Digital Marketing Company based in India."
         />
       </Head>
-      <Box mb={20}>
+      <Box mb={0}>
         <Box id="home" as="section" pt="6rem" pb={{ base: "0", md: "5rem" }}>
           <Container maxW="container.lg">
             <Stack
@@ -113,7 +125,7 @@ function Index() {
                   mb="16px"
                   lineHeight="1.2"
                 >
-                  Welcome
+                  <Fade>Welcome</Fade>
                 </chakra.h1>
 
                 <Text
@@ -247,7 +259,7 @@ function Index() {
               >
                 We have flexible plans. All plans are charged based on{" "}
                 <b>per version</b> basis. (i.e) a single revision of a Web
-                Design for each plan is layed down below.
+                Application for each plan is layed down below.
               </Text>
 
               <br />
@@ -262,16 +274,161 @@ function Index() {
           >
             {plans.map((entry) => {
               return (
-                <PricingCard
-                  style={{ padding: 0.5 }}
-                  key={entry.plan + "-default"}
-                  plan={entry.plan}
-                  price={entry.price}
-                  features={entry.features}
-                />
+                <Bounce key={entry.plan + "-default"}>
+                  <PricingCard
+                    callback={(choice) => {
+                      const element = document.getElementById("contact");
+                      if (element) {
+                        element.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
+                    style={{ padding: 0.5 }}
+                    plan={entry.plan}
+                    price={entry.price}
+                    features={entry.features}
+                  />
+                </Bounce>
               );
             })}
           </Stack>
+        </Box>
+
+        <Box as="section" id="about" pt="4rem" pb={{ base: "0", md: "5rem" }}>
+          <Container maxW="container.xl">
+            <Box textAlign="center">
+              <chakra.h1
+                maxW="16ch"
+                mx="auto"
+                fontSize={{ base: "2.25rem", sm: "3rem", lg: "5rem" }}
+                fontFamily="heading"
+                letterSpacing="tighter"
+                fontWeight="extrabold"
+                mb="16px"
+                lineHeight="1.2"
+              >
+                About
+              </chakra.h1>
+            </Box>
+            <br />
+            <br />
+            <Stack
+              spacing={8}
+              direction={["column", "column", "row", "row"]}
+              align={["center", "center", "flex-start", "flex-start"]}
+              justify="space-between"
+            >
+              <Fade>
+                <Box borderRadius="lg" bg="#6d64e8">
+                  <Image
+                    borderRadius="lg"
+                    minW={["250", "360", "360", "400", "500"]}
+                    minH={["400", "560", "560", "600", "700"]}
+                    maxW={["250", "360", "360", "400", "500"]}
+                    maxH={["400", "560", "560", "600", "700"]}
+                    src="/about_cover.jpg"
+                    style={{ opacity: "0.40" }}
+                  />
+                </Box>
+              </Fade>
+
+              <Fade>
+                <Text
+                  maxW="80ch"
+                  color="gray.500"
+                  fontSize={{ base: "lg", lg: "xl" }}
+                >
+                  <br />
+                  We are a <b>service based</b> startup company based in India.
+                  We like to build <b>very high quality</b> web applications. We
+                  also love to do digital marketing as well. <br /> <br />
+                  We build web applications using <b>ReactJS</b> which helps us
+                  make very reactive and responsive web applications for you. It
+                  is also current industry trend. <b>In layman terms,</b> we
+                  build your website with the same technology that{" "}
+                  <b>Facebook</b> uses to build it's most popular product,{" "}
+                  <b>Instagram</b>.
+                  <br />
+                  <br />
+                  We also love <b>open source</b> software so much that we even
+                  released the source of this website for you to audit our code
+                  personally if you want. We beg to differ from web development
+                  agency in India which <b>uses subpar practices and design</b>.{" "}
+                  <br />
+                  <br />
+                  We like to differ from other agencies in India by giving you
+                  world class web application and design for your business. We
+                  assure you that you won't regret your choice.
+                  <br />
+                  <br />
+                  <Text fontWeight="extrabold" color="#6d64e8">
+                    We would love to power your business, please consider us for
+                    your next project.
+                  </Text>
+                </Text>
+              </Fade>
+            </Stack>
+          </Container>
+          <br />
+          <br />
+        </Box>
+
+        <Divider />
+
+        <Box
+          as="section"
+          id="contact"
+          bg="gray.50"
+          pt="4rem"
+          pb={{ base: "0", md: "5rem" }}
+        >
+          <Container maxW="container.lg">
+            <Box textAlign="center">
+              <chakra.h1
+                maxW="16ch"
+                mx="auto"
+                fontSize={{ base: "2.25rem", sm: "3rem", lg: "5rem" }}
+                fontFamily="heading"
+                letterSpacing="tighter"
+                fontWeight="extrabold"
+                mb="16px"
+                lineHeight="1.2"
+              >
+                Contact
+              </chakra.h1>
+            </Box>
+
+            <FormControl id="email" isRequired>
+              <FormLabel>Email address</FormLabel>
+              <Input size="lg" placeholder="Contact Email" type="email" />
+              <FormHelperText>
+                We'll contact you using this email.
+              </FormHelperText>
+            </FormControl>
+            <br />
+            <FormControl id="company" isRequired>
+              <FormLabel>Company Name</FormLabel>
+              <Input size="lg" placeholder="Company" type="name" />
+            </FormControl>
+            <br />
+            <FormControl id="description" isRequired>
+              <FormLabel>Project Description</FormLabel>
+              <Textarea
+                rows={10}
+                size="lg"
+                placeholder="Project Summary"
+                type="text"
+              />
+            </FormControl>
+            <br />
+            <Center>
+              <Button size="lg" height="48px" width="200px">
+                Submit
+              </Button>
+            </Center>
+          </Container>
+          <br />
+          <br />
+          <br />
         </Box>
       </Box>
     </>

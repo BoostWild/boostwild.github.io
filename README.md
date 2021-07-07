@@ -1,4 +1,4 @@
-# BoostWild Official Website (Work in Progress)
+# BoostWild Official Website
 
 Official website for BoostWild. Open Sourced under AGPL v3.
 

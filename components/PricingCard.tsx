@@ -23,7 +23,7 @@ export default function PricingCard({
   return (
     <Center py={6}>
       <Box
-        maxW={"368px"}
+        maxW={"340px"}
         w={"full"}
         bg={useColorModeValue("white", "gray.800")}
         boxShadow={"2xl"}
@@ -60,7 +60,7 @@ export default function PricingCard({
           <List spacing={3}>
             {features.map((entry, i) => {
               return (
-                <ListItem key={i}>
+                <ListItem key={entry + "-list-item"}>
                   <ListIcon as={CheckIcon} color="green.400" />
                   {entry}
                 </ListItem>
@@ -85,7 +85,7 @@ export default function PricingCard({
               bg: "green.500",
             }}
           >
-            Order
+            Contact Sales
           </Button>
         </Box>
       </Box>
