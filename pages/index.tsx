@@ -19,30 +19,33 @@ function Index() {
   return (
     <>
       <Head>
-	  <title>BoostWild Official Website</title>
-	  <meta charSet="utf-8" />
-          <meta property="og:title" content="BoostWild Official Website" key="title" />
-          <meta
-            name="description"
-            content="Modern Web Development and Digital Marketing Company based in India."
-          />
-          <meta
-            property="og:description"
-            content="Modern Web Development and Digital Marketing Company based in India."
-          />
-          <meta property="og:type" content="website" />
-          <meta property="og:site_name" content="boostwild.in" />
-          <meta property="og:image" content="/social/index.png" />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:image" content="/social/index.png" />
-          <meta name="twitter:creator" content="@boostwildin" />
-          <meta name="twitter:site" content="boostwild.in" />
-          <meta name="twitter:title" content="BoostWild Official Website" />
-          <meta
-            name="twitter:description"
-            content="Modern Web Development and Digital Marketing Company based in India."
-          />
-         
+        <title>BoostWild Official Website</title>
+        <meta charSet="utf-8" />
+        <meta
+          property="og:title"
+          content="BoostWild Official Website"
+          key="title"
+        />
+        <meta
+          name="description"
+          content="Modern Web Development and Digital Marketing Company based in India."
+        />
+        <meta
+          property="og:description"
+          content="Modern Web Development and Digital Marketing Company based in India."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="boostwild.in" />
+        <meta property="og:image" content="/social/index.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="/social/index.png" />
+        <meta name="twitter:creator" content="@boostwildin" />
+        <meta name="twitter:site" content="boostwild.in" />
+        <meta name="twitter:title" content="BoostWild Official Website" />
+        <meta
+          name="twitter:description"
+          content="Modern Web Development and Digital Marketing Company based in India."
+        />
       </Head>
       <Box mb={20}>
         <Box as="section" pt="6rem" pb={{ base: "0", md: "5rem" }}>
@@ -145,7 +148,7 @@ function Index() {
                   animationDuration={0.8}
                   style={{ padding: 0.5 }}
                 />
-		<AnimatedSocialIcon
+                <AnimatedSocialIcon
                   brandName="youtube"
                   url="#"
                   animation="float"

@@ -20,6 +20,7 @@ import "@fontsource/roboto/400.css";
 import Logo from "../components/Logo";
 import MenuToggle from "../components/MenuToggle";
 import MenuItem from "../components/MenuItem";
+import DrawerMenuItem from "../components/DrawerMenuItem";
 
 const theme = extendTheme({
   fonts: {
@@ -30,11 +31,18 @@ const theme = extendTheme({
 
 function App({ Component, pageProps }) {
   const [isOpen, setIsOpen] = React.useState(false);
-  const btnRef = React.useRef();
   const toggle = () => setIsOpen(!isOpen);
   const handleLink = (link) => {
     console.log({ link });
   };
+
+  const nav = [
+    { name: "Home", to: "/" },
+    { name: "Pricing", to: "#pricing" },
+    { name: "Showcase", to: "#showcase" },
+    { name: "About", to: "#about" },
+    { name: "Contact", to: "#contact" },
+  ];
 
   return (
     <ChakraProvider theme={theme}>
@@ -51,7 +59,7 @@ function App({ Component, pageProps }) {
           <Logo />
         </Fade>
         <Fade in={true}>
-          <MenuToggle toggle={toggle} isOpen={isOpen} ref={btnRef} />
+          <MenuToggle toggle={toggle} isOpen={isOpen} />
         </Fade>
         <Box
           display={{ base: "none", md: "block" }}
@@ -65,21 +73,17 @@ function App({ Component, pageProps }) {
               direction="row"
               pt={[4, 4, 0, 0]}
             >
-              <MenuItem to="/" linkSignal={handleLink}>
-                Home
-              </MenuItem>
-              <MenuItem to="#pricing" linkSignal={handleLink}>
-                Pricing
-              </MenuItem>
-              <MenuItem to="#showcase" linkSignal={handleLink}>
-                Showcase
-              </MenuItem>
-              <MenuItem to="#about" linkSignal={handleLink}>
-                About
-              </MenuItem>
-              <MenuItem to="#contact" linkSignal={handleLink}>
-                Contact
-              </MenuItem>
+              {nav.map((entry) => {
+                return (
+                  <MenuItem
+                    key={entry["name"]}
+                    to={entry["to"]}
+                    linkSignal={handleLink}
+                  >
+                    {entry["name"]}
+                  </MenuItem>
+                );
+              })}
             </Stack>
           </Fade>
         </Box>
@@ -89,14 +93,28 @@ function App({ Component, pageProps }) {
         isOpen={isOpen}
         onClose={toggle}
         placement="right"
-        finalFocusRef={btnRef}
       >
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader>Navigation</DrawerHeader>
 
-          <DrawerBody></DrawerBody>
+          <DrawerBody>
+            {nav.map((entry) => {
+              return (
+                <>
+                  <DrawerMenuItem
+                    key={entry["name"] + "-drawer"}
+                    to={entry["to"]}
+                    linkSignal={handleLink}
+                  >
+                    {entry["name"]}
+                  </DrawerMenuItem>
+                  <br key={entry["name"] + "-br-drawer"} />
+                </>
+              );
+            })}
+          </DrawerBody>
         </DrawerContent>
       </Drawer>
 
