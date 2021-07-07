@@ -54,16 +54,11 @@ function Index() {
               spacing={8}
               align="center"
               justify="space-between"
-              direction={[
-                "column-reverse",
-                "column-reverse",
-                "row-reverse",
-                "row-reverse",
-              ]}
+              direction={["column", "column", "row-reverse", "row-reverse"]}
             >
               <Image
                 align="center"
-                w={["100px", "250px", "250px", "260px"]}
+                w={["160px", "250px", "250px", "260px"]}
                 objectFit="cover"
                 src="/logo.png"
                 alt=""
