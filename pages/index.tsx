@@ -15,6 +15,21 @@ import {
 
 import Head from "next/head";
 
+import PricingCard from "../components/PricingCard";
+
+const plans = [
+  {
+    plan: "BASIC",
+    price: "15,000",
+    features: [
+      "Unlimited Static Pages",
+      "Optimized for SEO and Fast Loading",
+      "Unique and Custom Design",
+      "Modern Practices",
+    ],
+  },
+];
+
 function Index() {
   return (
     <>
@@ -190,8 +205,36 @@ function Index() {
               >
                 Pricing
               </chakra.h1>
+              <Text
+                mx="auto"
+                color="gray.200"
+                fontSize={{ base: "lg", lg: "xl" }}
+              >
+                We have flexible plans. All plans are charged based on{" "}
+                <b>per version</b> basis. (i.e) a single revision of a Web
+                Design for each plan is layed down below.
+              </Text>
+
+              <br />
             </Box>
           </Container>
+          <Stack
+            direction={["column", "column", "row", "row"]}
+            wrap="wrap"
+            align="center"
+            justify="center"
+          >
+            {plans.map((entry) => {
+              return (
+                <PricingCard
+                  key={entry.plan + "-default"}
+                  plan={entry.plan}
+                  price={entry.price}
+                  features={entry.features}
+                />
+              );
+            })}
+          </Stack>
         </Box>
       </Box>
     </>

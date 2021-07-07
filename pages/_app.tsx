@@ -35,11 +35,11 @@ const theme = extendTheme({
 });
 
 const nav = [
-  { key: 0, name: "Home", to: "/" },
-  { key: 1, name: "Pricing", to: "#pricing" },
-  { key: 2, name: "Showcase", to: "#showcase" },
-  { key: 3, name: "About", to: "#about" },
-  { key: 4, name: "Contact", to: "#contact" },
+  { name: "Home", to: "/" },
+  { name: "Pricing", to: "#pricing" },
+  { name: "Showcase", to: "#showcase" },
+  { name: "About", to: "#about" },
+  { name: "Contact", to: "#contact" },
 ];
 
 function App({ Component, pageProps }) {
@@ -81,7 +81,7 @@ function App({ Component, pageProps }) {
               {nav.map((entry) => {
                 return (
                   <MenuItem
-                    key={entry["name"]}
+                    key={entry["to"] + "-default"}
                     to={entry["to"]}
                     linkSignal={handleLink}
                   >
@@ -104,19 +104,15 @@ function App({ Component, pageProps }) {
           <DrawerCloseButton />
           <DrawerHeader>Navigation</DrawerHeader>
 
-          <DrawerBody>
+          <DrawerBody align="center">
             {nav.map((entry) => {
               return (
-                <>
-                  <DrawerMenuItem
-                    key={entry["name"] + "-drawer"}
-                    to={entry["to"]}
-                    linkSignal={handleLink}
-                  >
+                <div key={entry["to"] + "-small"}>
+                  <DrawerMenuItem to={entry["to"]} linkSignal={handleLink}>
                     {entry["name"]}
                   </DrawerMenuItem>
-                  <br key={entry["name"] + "-br-drawer"} />
-                </>
+                  <br />
+                </div>
               );
             })}
           </DrawerBody>
