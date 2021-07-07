@@ -152,7 +152,7 @@ function Index() {
                 _active={{ borderColor: "#6d64e8" }}
                 color="#6d64e8"
               >
-                GET STARTED
+                See Pricing
               </Button>
             </Center>
             <br />
