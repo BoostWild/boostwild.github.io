@@ -25,7 +25,30 @@ const plans = [
       "Unlimited Static Pages",
       "Optimized for SEO and Fast Loading",
       "Unique and Custom Design",
-      "Modern Practices",
+      "Fully Reactive Website",
+      "Modern Web Practice",
+    ],
+  },
+  {
+    plan: "GHOST",
+    price: "60,000",
+    features: [
+      "All features in Basic Plan",
+      "Upto 10 API Implementation",
+      "Ghost Content Management System",
+      "Easy Deploy with Docker",
+      "Technical Support for Deploying",
+    ],
+  },
+  {
+    plan: "E-COMMERCE",
+    price: "80,000",
+    features: [
+      "All features in Basic Plan",
+      "Strapi Integration",
+      "Paytm Payment Gateway",
+      "Easy Deploy with Docker",
+      "Technical Support for Deploying",
     ],
   },
 ];
@@ -63,7 +86,7 @@ function Index() {
         />
       </Head>
       <Box mb={20}>
-        <Box as="section" pt="6rem" pb={{ base: "0", md: "5rem" }}>
+        <Box id="home" as="section" pt="6rem" pb={{ base: "0", md: "5rem" }}>
           <Container maxW="container.lg">
             <Stack
               spacing={8}
@@ -113,6 +136,12 @@ function Index() {
           <Container>
             <Center>
               <Button
+                onClick={() => {
+                  const element = document.getElementById("pricing");
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
                 size="lg"
                 variant="outline"
                 border="2px"
@@ -189,7 +218,13 @@ function Index() {
 
         <Divider colorScheme="grey" />
 
-        <Box as="section" pt="6rem" bg="#6d64e8" pb={{ base: "0", md: "5rem" }}>
+        <Box
+          as="section"
+          id="pricing"
+          pt="6rem"
+          bg="#6d64e8"
+          pb={{ base: "0", md: "5rem" }}
+        >
           <Container>
             <Box textAlign="center">
               <chakra.h1
@@ -219,6 +254,7 @@ function Index() {
             </Box>
           </Container>
           <Stack
+            spacing={8}
             direction={["column", "column", "row", "row"]}
             wrap="wrap"
             align="center"
@@ -227,6 +263,7 @@ function Index() {
             {plans.map((entry) => {
               return (
                 <PricingCard
+                  style={{ padding: 0.5 }}
                   key={entry.plan + "-default"}
                   plan={entry.plan}
                   price={entry.price}

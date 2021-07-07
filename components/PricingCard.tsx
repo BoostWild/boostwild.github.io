@@ -23,7 +23,7 @@ export default function PricingCard({
   return (
     <Center py={6}>
       <Box
-        maxW={"330px"}
+        maxW={"368px"}
         w={"full"}
         bg={useColorModeValue("white", "gray.800")}
         boxShadow={"2xl"}

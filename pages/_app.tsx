@@ -37,7 +37,6 @@ const theme = extendTheme({
 const nav = [
   { name: "Home", to: "/" },
   { name: "Pricing", to: "#pricing" },
-  { name: "Showcase", to: "#showcase" },
   { name: "About", to: "#about" },
   { name: "Contact", to: "#contact" },
 ];
@@ -46,7 +45,17 @@ function App({ Component, pageProps }) {
   const [isOpen, setIsOpen] = React.useState(false);
   const toggle = () => setIsOpen(!isOpen);
   const handleLink = (link) => {
-    console.log({ link });
+    if (link.charAt(0) != "#") {
+      window.location = link;
+    } else {
+      const element = document.querySelector(link);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+      if (isOpen) {
+        toggle();
+      }
+    }
   };
 
   return (
