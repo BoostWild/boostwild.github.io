@@ -47,13 +47,6 @@ export default function PricingCard({
           >
             {plan}
           </Text>
-          <Stack direction={"row"} align={"center"} justify={"center"}>
-            <Text fontSize={"3xl"}>₹</Text>
-            <Text fontSize={"6xl"} fontWeight={800}>
-              {price}
-            </Text>
-            <Text color={"gray.500"}> / version</Text>
-          </Stack>
         </Stack>
 
         <Box bg={useColorModeValue("gray.50", "gray.900")} px={6} py={10}>

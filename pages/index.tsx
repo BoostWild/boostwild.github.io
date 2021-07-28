@@ -28,6 +28,7 @@ import Bounce from "react-reveal/Bounce";
 import Head from "next/head";
 
 import PricingCard from "../components/PricingCard";
+import ContactForm from "../components/ContactForm";
 
 const plans = [
   {
@@ -396,35 +397,8 @@ function Index() {
                 Contact
               </chakra.h1>
             </Box>
-
-            <FormControl id="email" isRequired>
-              <FormLabel>Email address</FormLabel>
-              <Input size="lg" placeholder="Contact Email" type="email" />
-              <FormHelperText>
-                We'll contact you using this email.
-              </FormHelperText>
-            </FormControl>
-            <br />
-            <FormControl id="company" isRequired>
-              <FormLabel>Company Name</FormLabel>
-              <Input size="lg" placeholder="Company" type="name" />
-            </FormControl>
-            <br />
-            <FormControl id="description" isRequired>
-              <FormLabel>Project Description</FormLabel>
-              <Textarea
-                rows={10}
-                size="lg"
-                placeholder="Project Summary"
-                type="text"
-              />
-            </FormControl>
-            <br />
-            <Center>
-              <Button size="lg" height="48px" width="200px">
-                Submit
-              </Button>
-            </Center>
+	    <ContactForm /> 
+	    <br />
           </Container>
           <br />
           <br />
