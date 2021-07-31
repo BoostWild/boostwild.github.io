@@ -21,22 +21,22 @@ export default function ContactSocialButtons({ iconBg = "black", ...rest }) {
         <SocialIcon
           style={{ marginTop: "10px" }}
           bgColor={icon_bg}
-          url="mailto:info@boostwild.com"
+          url="mailto:info@boostwild.in"
         />
         <Text fontSize="lg" style={{ marginTop: "10px" }}>
           {" "}
-          info@boostwild.com
+          info@boostwild.in
         </Text>
       </Stack>
       <Stack align="center" justify="center" direction="row" spacing={2}>
         <SocialIcon
           style={{ marginTop: "10px" }}
           bgColor={icon_bg}
-          url="mailto:support@boostwild.com"
+          url="mailto:support@boostwild.in"
         />
         <Text fontSize="lg" style={{ marginTop: "10px" }}>
           {" "}
-          support@boostwild.com
+          support@boostwild.in
         </Text>
       </Stack>
     </Stack>
