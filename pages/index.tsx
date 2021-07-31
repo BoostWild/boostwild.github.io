@@ -29,6 +29,7 @@ import Head from "next/head";
 
 import PricingCard from "../components/PricingCard";
 import ContactForm from "../components/ContactForm";
+import ContactSocialButtons from "../components/ContactSocialButtons";
 
 const plans = [
   {
@@ -397,8 +398,9 @@ function Index() {
                 Contact
               </chakra.h1>
             </Box>
-	    <ContactForm /> 
-	    <br />
+            <ContactSocialButtons />
+            <ContactForm />
+            <br />
           </Container>
           <br />
           <br />
