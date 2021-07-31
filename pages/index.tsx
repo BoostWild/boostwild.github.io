@@ -67,7 +67,7 @@ const plans = [
   },
 ];
 
-function Index() {
+function Index(props) {
   return (
     <>
       <Head>
@@ -399,7 +399,7 @@ function Index() {
               </chakra.h1>
             </Box>
             <ContactSocialButtons />
-            <ContactForm />
+	    {props.showContact && <ContactForm api={props.contactAPI}/>}
             <br />
           </Container>
           <br />
@@ -412,3 +412,22 @@ function Index() {
 }
 
 export default Index;
+
+
+export async function getStaticProps() {
+  const env_keys = Object.keys(process.env);
+  const showContact =
+    (env_keys.indexOf("TELEGRAM_BOT_TOKEN") !== -1 &&
+      env_keys.indexOf("TELEGRAM_GROUP_ID_TARGET") !== -1) ||
+    env_keys.indexOf("CONTACT_API_URL") !== -1;
+  const api =
+    env_keys.indexOf("CONTACT_API_URL") !== -1
+      ? process.env.CONTACT_API_URL
+      : null;
+  return {
+    props: {
+      showContact: showContact,
+      contactAPI: api,
+    },
+  };
+}

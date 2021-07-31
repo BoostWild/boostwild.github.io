@@ -8,6 +8,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-20.04
+    env:
+      CONTACT_API_URL: "https://api-boostwild.vercel.app/api/contact"
     steps:
       - uses: actions/checkout@v2
 

@@ -48,7 +48,7 @@ export default function ContactForm(props) {
       <Formik
         initialValues={{ name: "", email: "", message: "" }}
         onSubmit={(values, actions) => {
-          axios.post("/api/contact", values).then(({ data }) => {
+          axios.post(props.api ? props.api : "/api/contact", values).then(({ data }) => {
             actions.setSubmitting(false);
             actions.resetForm();
             if (!data.error) {
