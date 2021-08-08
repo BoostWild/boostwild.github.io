@@ -25,7 +25,7 @@ export default function ContactSocialButtons({ iconBg = "black", ...rest }) {
         />
         <Text fontSize="lg" style={{ marginTop: "10px" }}>
           {" "}
-          info@boostwild.in
+          boostwildpromotions@gmail.com
         </Text>
       </Stack>
       <Stack align="center" justify="center" direction="row" spacing={2}>
