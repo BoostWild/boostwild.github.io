@@ -67,6 +67,43 @@ const plans = [
   },
 ];
 
+const youtubeplans = [
+  {
+    plan: "BASIC",
+    price: "15,000",
+    features: [
+      "Promote your Channel",
+      "Optimize description for better search",
+      "5 Thumbnail Design",
+      "Best Marketting Practices",
+      "Your Usage of our service will be Private",
+    ],
+  },
+  {
+    plan: "BUSINESS",
+    price: "60,000",
+    features: [
+      "All features in Basic Plan",
+      "Individual Content Promotion",
+      "Promotion via Instagram",
+      "Custom Thumbnail Design",
+      "100+ Subscribers",
+    ],
+  },
+  {
+    plan: "PREMIUM",
+    price: "80,000",
+    features: [
+      "All features in Basic Plan",
+      "Individual Content Promotion",
+      "Promotion via Instagram and Whatsapp",
+      "Tweets on your content",
+      "200+ Subscribers",
+    ],
+  },
+];
+
+
 function Index(props) {
   return (
     <>
@@ -231,10 +268,71 @@ function Index(props) {
         </Box>
 
         <Divider colorScheme="grey" />
+	      
+	<Box
+          as="section"
+          id="services"
+          pt="6rem"
+          bg="gray.50"
+          pb={{ base: "0", md: "5rem" }}
+        >
+          <Container>
+            <Box textAlign="center">
+              <chakra.h1
+                maxW="16ch"
+                mx="auto"
+                fontSize={{ base: "2.25rem", sm: "3rem", lg: "5rem" }}
+                fontFamily="heading"
+                letterSpacing="tighter"
+                fontWeight="extrabold"
+                mb="16px"
+                lineHeight="1.2"
+                color="white"
+              >
+                YouTube Promotions
+              </chakra.h1>
+              <Text
+                mx="auto"
+                color="gray.200"
+                fontSize={{ base: "lg", lg: "xl" }}
+              >
+               We expertise in YouTube Promotions and Social Media Optimization.
+              </Text>
+
+              <br />
+            </Box>
+          </Container>
+          <Stack
+            spacing={8}
+            direction={["column", "column", "row", "row"]}
+            wrap="wrap"
+            align="center"
+            justify="center"
+          >
+            {youtubeplans.map((entry) => {
+              return (
+                <Bounce key={entry.plan + "-default-smo"}>
+                  <PricingCard
+                    callback={(choice) => {
+                      const element = document.getElementById("contact");
+                      if (element) {
+                        element.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
+                    style={{ padding: 0.5 }}
+                    plan={entry.plan}
+                    price={entry.price}
+                    features={entry.features}
+                  />
+                </Bounce>
+              );
+            })}
+          </Stack>
+        </Box>
 
         <Box
           as="section"
-          id="pricing"
+          id="webdevelopment"
           pt="6rem"
           bg="#6d64e8"
           pb={{ base: "0", md: "5rem" }}
@@ -252,7 +350,7 @@ function Index(props) {
                 lineHeight="1.2"
                 color="white"
               >
-                Pricing
+                Web Development
               </chakra.h1>
               <Text
                 mx="auto"
