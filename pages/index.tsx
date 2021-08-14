@@ -188,7 +188,7 @@ function Index(props) {
             <Center>
               <Button
                 onClick={() => {
-                  const element = document.getElementById("pricing");
+                  const element = document.getElementById("services");
                   if (element) {
                     element.scrollIntoView({ behavior: "smooth" });
                   }
@@ -203,7 +203,7 @@ function Index(props) {
                 _active={{ borderColor: "#6d64e8" }}
                 color="#6d64e8"
               >
-                See Pricing
+                Our Services
               </Button>
             </Center>
             <br />
@@ -287,7 +287,6 @@ function Index(props) {
                 fontWeight="extrabold"
                 mb="16px"
                 lineHeight="1.2"
-                color="white"
               >
                 YouTube Promotions
               </chakra.h1>
