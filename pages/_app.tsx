@@ -36,7 +36,7 @@ const theme = extendTheme({
 
 const nav = [
   { name: "Home", to: "/" },
-  { name: "Pricing", to: "#pricing" },
+  { name: "Services", to: "#services" },
   { name: "About", to: "#about" },
   { name: "Contact", to: "#contact" },
 ];
