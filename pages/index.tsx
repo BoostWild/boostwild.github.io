@@ -292,7 +292,6 @@ function Index(props) {
               </chakra.h1>
               <Text
                 mx="auto"
-                color="gray.200"
                 fontSize={{ base: "lg", lg: "xl" }}
               >
                We expertise in YouTube Promotions and Social Media Optimization.
