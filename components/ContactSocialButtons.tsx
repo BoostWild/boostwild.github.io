@@ -36,7 +36,7 @@ export default function ContactSocialButtons({ iconBg = "black", ...rest }) {
         />
         <Text fontSize="lg" style={{ marginTop: "10px" }}>
           {" "}
-          support@boostwild.in
+          info@boostwild.in
         </Text>
       </Stack>
     </Stack>
