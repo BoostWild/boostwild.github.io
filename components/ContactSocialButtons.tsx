@@ -32,7 +32,7 @@ export default function ContactSocialButtons({ iconBg = "black", ...rest }) {
         <SocialIcon
           style={{ marginTop: "10px" }}
           bgColor={icon_bg}
-          url="mailto:support@boostwild.in"
+          url="mailto:info@boostwild.in"
         />
         <Text fontSize="lg" style={{ marginTop: "10px" }}>
           {" "}
