@@ -436,11 +436,6 @@ function Index(props) {
                   fontSize={{ base: "lg", lg: "xl" }}
                 >
                   <br />
-			 Our service are elegant, effective, flexible, genuine, affordable and we try to be the cheapest in the market. 
-We posses excellent teams who build very high quality websites and web applications with most modern techs like ReactJS, etc.
-In layman terms, we build website with the same technology that Facebook uses to build it most popular product : Instagram.
-
-
 			
                   We are <b>service based</b> startup company based in India. 
 		  Boostwild is <b>Digital Marketing, Website Development and
