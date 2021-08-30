@@ -437,26 +437,34 @@ function Index(props) {
                   fontSize={{ base: "lg", lg: "xl" }}
                 >
                   <br />
-                  We are a <b>service based</b> startup company based in India.
-                  We like to build <b>very high quality</b> web applications. We
-                  also love to do digital marketing as well. <br /> <br />
-                  We build web applications using <b>ReactJS</b> which helps us
-                  make very reactive and responsive web applications for you. It
-                  is also current industry trend. <b>In layman terms,</b> we
-                  build your website with the same technology that{" "}
-                  <b>Facebook</b> uses to build it's most popular product,{" "}
-                  <b>Instagram</b>.
+			 Our service are elegant, effective, flexible, genuine, affordable and we try to be the cheapest in the market. 
+We posses excellent teams who build very high quality websites and web applications with most modern techs like ReactJS, etc.
+In layman terms, we build website with the same technology that Facebook uses to build it most popular product : Instagram.
+
+
+			
+                  We are <b>service based</b> startup company based in India. 
+		  Boostwild is <b>Digital Marketing, Website Development and
+		  Global solution company with clients all over the world.We
+		  have been into this stream providing exceptional services 
+		  since past years. Ouur services are <b>elegant, effective, 
+		  flexible, affordable</b> and we try to be the cheapest in 
+		  the market. We posses excellent and experienced teams who 
+		  build very high quality website and web applications with 
+		  most modern techs like REACT JS.
+                  <b>In layman terms,</b> we build your website with the same
+		  technology that{" "} <b>Facebook</b> uses to build it's most
+		  popular product,{" "} <b>Instagram</b>.
                   <br />
                   <br />
                   We also love <b>open source</b> software so much that we even
                   released the source of this website for you to audit our code
-                  personally if you want. We beg to differ from web development
-                  agency in India which <b>uses subpar practices and design</b>.{" "}
+                  personally if you want. We request to differ us from other web
+		  development agency in India which <b>uses subpar practices and 
+		  design</b>.{" "}
                   <br />
                   <br />
-                  We like to differ from other agencies in India by giving you
-                  world class web application and design for your business. We
-                  assure you that you won't regret your choice.
+          
                   <br />
                   <br />
                   <Text fontWeight="extrabold" color="#6d64e8">
