@@ -72,12 +72,11 @@ const youtubeplans = [
     plan: "Complete Monetization",
     price: "15,000",
     features: [
-      "Get 1000+ Subscription on your YouTube Channel",
+      "Get 1000+ Subscription on your Channel",
       "Get 4000+ Watch Hours",
-      "Promote your Channel with Top Rated Tags",
       "Optimize description for better search",
       "Backed by Effective Strategies",
-      "100% Safe and Gauranteed Results",
+      
     ],
   },
   {
